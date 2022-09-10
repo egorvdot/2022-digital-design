@@ -39,6 +39,7 @@ module right_shift_of_N_by_S_using_right_shift_operation
 (input  [N - 1:0] a, output [N - 1:0] res);
 
   // TODO
+  assign res = a >> S;
 
 endmodule
 
@@ -47,6 +48,7 @@ module right_shift_of_N_by_S_using_concatenation
 (input  [N - 1:0] a, output [N - 1:0] res);
 
   // TODO
+  assign res = { S*1'b0, a [N-1:S] };
 
 endmodule
 
@@ -55,6 +57,9 @@ module right_shift_of_N_by_S_using_for_inside_always
 (input  [N - 1:0] a, output logic [N - 1:0] res);
 
   // TODO
+  always_comb
+    for (int i = N - 1; i >= 0; i --)
+      res [i] = (i > N - 1 - S) ? 1'b0 : a[i + S];
 
 endmodule
 
@@ -63,6 +68,15 @@ module right_shift_of_N_by_S_using_for_inside_generate
 (input  [N - 1:0] a, output [N - 1:0] res);
 
   // TODO
+  genvar i;
+
+  generate
+    for (i = N - 1; i >= 0; i --)
+      if (i > N - 1 - S)
+        assign res [i] = 1'b0;
+      else
+        assign res [i] = a [i + S];
+  endgenerate
 
 endmodule
 

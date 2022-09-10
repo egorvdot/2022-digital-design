@@ -23,21 +23,20 @@ module mux_4_1
   // Implement mux_4_1 using three instances of mux_2_1
   wire [3:0] mux_d0_d1, mux_d2_d3;
   mux_2_1 muxd0d1(
-	.d0(d0), .d1(d1),
-	.sel(sel[0]),
-	.y(mux_d0_d1)
+    .d0(d0), .d1(d1),
+    .sel(sel[0]),
+    .y(mux_d0_d1)
   );
   mux_2_1 muxd2d3(
-	.d0(d2), .d1(d3),
-	.sel(sel[0]),
-	.y(mux_d2_d3)
+    .d0(d2), .d1(d3),
+    .sel(sel[0]),
+    .y(mux_d2_d3)
   );
   mux_2_1 mux_y(
-	.d0(mux_d0_d1), .d1(mux_d2_d3),
-	.sel(sel[1]),
-	.y(y)
+    .d0(mux_d0_d1), .d1(mux_d2_d3),
+    .sel(sel[1]),
+  	.y(y)
   );
-
 
 endmodule
 

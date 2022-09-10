@@ -29,15 +29,15 @@ module mux_4_1
   
   always_comb
     if (sel[0])
-	  if (sel[1])
-	    y = d3;
-      else
-	    y = d1;
+	    if (sel[1])
+	      y = d3;
+        else
+	      y = d1;
     else
-	  if (sel[1])
-	    y = d2;
+	    if (sel[1])
+	      y = d2;
       else
-	    y = d0;
+	      y = d0;
 
 endmodule
 

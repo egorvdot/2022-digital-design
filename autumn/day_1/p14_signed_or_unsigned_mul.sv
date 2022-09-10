@@ -36,7 +36,7 @@ module signed_or_unsigned_mul
   parameter n = 8
 )
 (
-  input  [    n - 1:0] a, b,
+  input [    n - 1:0] a, b,
   input                sign,
   output [2 * n - 1:0] res
 );
@@ -45,7 +45,11 @@ module signed_or_unsigned_mul
 
   // Implement a module that generates either signed or unsigned result
   // of the multiplication as requested by sign bit.
-
+  wire signed [n - 1:0] signed_a = a;
+  wire signed [n - 1:0] signed_b = b;
+  wire signed [2 * n - 1:0] signed_res = signed_a * signed_b;
+  assign res = sign ? signed_res : a * b;
+  // assign res = a * b;
 
 endmodule
 

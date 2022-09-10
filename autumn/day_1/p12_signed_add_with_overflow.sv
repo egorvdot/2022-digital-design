@@ -23,11 +23,8 @@ module signed_add_with_overflow
   // i.e. the detection of the case
   // when the sum (either positive or negative)
   // does not fit into 4 bits
-  wire [4:0] over_sum;
-  assign over_sum = a + b;
-  assign sum = over_sum[3:0];
-  assign overflow = over_sum[3]?1'd0:over_sum[4];
-
+  assign sum = a + b;
+  assign overflow = a[3] == b[3] && a[3] != sum[3];
 
 endmodule
 
