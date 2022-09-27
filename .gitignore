@@ -1,4 +1,4 @@
-*.pptx
+.DS_Store
 log.txt
 sim/
 project/
