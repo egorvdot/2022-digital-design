@@ -1,0 +1,70 @@
+
+test.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00010074 <add>:
+   10074:	fe010113          	addi	sp,sp,-32
+   10078:	00812e23          	sw	s0,28(sp)
+   1007c:	02010413          	addi	s0,sp,32
+   10080:	fea42623          	sw	a0,-20(s0)
+   10084:	feb42423          	sw	a1,-24(s0)
+   10088:	fec42703          	lw	a4,-20(s0)
+   1008c:	fe842783          	lw	a5,-24(s0)
+   10090:	00f707b3          	add	a5,a4,a5
+   10094:	00078513          	mv	a0,a5
+   10098:	01c12403          	lw	s0,28(sp)
+   1009c:	02010113          	addi	sp,sp,32
+   100a0:	00008067          	ret
+
+000100a4 <main>:
+   100a4:	ff010113          	addi	sp,sp,-16
+   100a8:	00112623          	sw	ra,12(sp)
+   100ac:	00812423          	sw	s0,8(sp)
+   100b0:	01010413          	addi	s0,sp,16
+   100b4:	00200593          	li	a1,2
+   100b8:	00100513          	li	a0,1
+   100bc:	fb9ff0ef          	jal	ra,10074 <add>
+   100c0:	00000793          	li	a5,0
+   100c4:	00078513          	mv	a0,a5
+   100c8:	00c12083          	lw	ra,12(sp)
+   100cc:	00812403          	lw	s0,8(sp)
+   100d0:	01010113          	addi	sp,sp,16
+   100d4:	00008067          	ret
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	3a434347          	.4byte	0x3a434347
+   4:	2820                	.2byte	0x2820
+   6:	65653267          	.4byte	0x65653267
+   a:	6535                	.2byte	0x6535
+   c:	3334                	.2byte	0x3334
+   e:	3030                	.2byte	0x3030
+  10:	3831                	.2byte	0x3831
+  12:	642d                	.2byte	0x642d
+  14:	7269                	.2byte	0x7269
+  16:	7974                	.2byte	0x7974
+  18:	2029                	.2byte	0x2029
+  1a:	3231                	.2byte	0x3231
+  1c:	322e                	.2byte	0x322e
+  1e:	302e                	.2byte	0x302e
+	...
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	1b41                	.2byte	0x1b41
+   2:	0000                	.2byte	0x0
+   4:	7200                	.2byte	0x7200
+   6:	7369                	.2byte	0x7369
+   8:	01007663          	bgeu	zero,a6,14 <add-0x10060>
+   c:	0011                	.2byte	0x11
+   e:	0000                	.2byte	0x0
+  10:	1004                	.2byte	0x1004
+  12:	7205                	.2byte	0x7205
+  14:	3376                	.2byte	0x3376
+  16:	6932                	.2byte	0x6932
+  18:	7032                	.2byte	0x7032
+  1a:	0030                	.2byte	0x30
