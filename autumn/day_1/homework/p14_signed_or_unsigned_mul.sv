@@ -49,7 +49,6 @@ module signed_or_unsigned_mul
   wire signed [n - 1:0] signed_b = b;
   wire signed [2 * n - 1:0] signed_res = signed_a * signed_b;
   assign res = sign ? signed_res : a * b;
-  // assign res = a * b;
 
 endmodule
 

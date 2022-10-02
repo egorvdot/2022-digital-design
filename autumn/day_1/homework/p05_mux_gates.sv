@@ -69,8 +69,8 @@ module mux_4_1
   
   assign y =   (d0 & {4 {sel0}})
              | (d1 & {4 {sel1}})
-			 | (d2 & {4 {sel2}})
-			 | (d3 & {4 {sel3}});
+             | (d2 & {4 {sel2}})
+             | (d3 & {4 {sel3}});
 
 endmodule
 

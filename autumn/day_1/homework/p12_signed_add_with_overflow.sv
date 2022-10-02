@@ -12,7 +12,7 @@ endmodule
 
 module signed_add_with_overflow
 (
-  input [3:0] a, b,
+  input  [3:0] a, b,
   output [3:0] sum,
   output       overflow
 );

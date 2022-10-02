@@ -5,7 +5,7 @@ module mux_2_1
   output logic [3:0] y
 );
 
-  always_comb
+  always @*
     if (sel)
       y = d1;
     else
@@ -27,11 +27,11 @@ module mux_4_1
   // Using code for mux_2_1 as an example,
   // write code for 4:1 mux using the "if" statement
   
-  always_comb
+  always @*
     if (sel[0])
 	    if (sel[1])
 	      y = d3;
-        else
+      else
 	      y = d1;
     else
 	    if (sel[1])

@@ -5,7 +5,7 @@ module mux_2_1
   output logic [3:0] y
 );
 
-  always_comb
+  always @*
     case (sel)
       1'd0: y = d0;
       1'd1: y = d1;
@@ -26,7 +26,7 @@ module mux_4_1
 
   // Using code for mux_2_1 as an example,
   // write code for 4:1 mux using the "case" statement
-  always_comb
+  always @*
     case (sel)
       2'd0: y = d0;
       2'd1: y = d1;
