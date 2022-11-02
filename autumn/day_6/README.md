@@ -1,5 +1,5 @@
 # 15 Октября 2022
-https://youtu.be/du-6TUEARRQ
+[Запись лекции](https://youtu.be/du-6TUEARRQ)
 
 ## Тема занятия: 
 ```
